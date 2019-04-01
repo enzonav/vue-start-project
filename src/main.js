@@ -28,13 +28,6 @@ new Vue({
     task: '',
     newId: 3
   },
-  methods: {
-    addTodo: function () {
-      this.$store.dispatch('addTodo', this)
-      this.newId++
-      this.task = ''
-    }
-  },
   router,
   store,
   template: '<App/>',

@@ -6,7 +6,7 @@
       <ul>
         <li v-for="todo in todos"
         :class="{ completed: todo.completed }"
-        @click="toggleTodo(id)"
+        @click="toggleTodo(todo.id)"
         @dblclick="deleteTodo(todo.id)">{{ todo.task }}</li>
       </ul>
     </div>

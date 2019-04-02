@@ -29,6 +29,11 @@ export default {
     }
   },
   methods: {
+    addTodo: function () {
+      this.$store.dispatch('addTodo', this)
+      this.newId++
+      this.task = ''
+    },
     toggleTodo: function (id) {
       this.$store.dispatch('toggleTodo', id)
     },
@@ -40,4 +45,9 @@ export default {
 
 </script>
 
-<style></style>
+<style>
+.completed {
+  text-decoration: line-through;
+  color: #555;
+}
+</style>

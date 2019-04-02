@@ -23,10 +23,11 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 
 new Vue({
-  data: () => ({
+  el: '#app',
+  data: {
     task: '',
     newId: 3
-  }),
+  },
   methods: {
     addTodo: function () {
       this.$store.dispatch('addTodo', this)
@@ -36,5 +37,6 @@ new Vue({
   },
   router,
   store,
-  render: h => h(App),
-}).$mount('#app')
+  template: '<App/>',
+  components: { App }
+})

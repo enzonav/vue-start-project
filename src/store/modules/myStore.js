@@ -1,22 +1,6 @@
 
 const state = {
-  todos: [
-    {
-      id: 0,
-      task: 'Comprare la frutta',
-      completed: false
-    },
-    {
-      id: 1,
-      task: 'Sistemare Soggiorno',
-      completed: false
-    },
-    {
-      id: 2,
-      task: 'Imparare Vue.js',
-      completed: false
-    }
-  ]
+  todos: []
 }
 
 const getters = {

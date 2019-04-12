@@ -1,4 +1,21 @@
-
+document.getElementById("entryTitle").value;
+    var entryText = document.getElementById("entryText").value;
+    var entry = {
+        "title": entryTitle,
+        "text": entryText
+    };
+    localStorage.setItem("entry", JSON.stringify(entry));
+    // Save allEntries back to local storage
+    existingEntries.push(entry);
+    localStorage.setItem("allEntries", JSON.stringify(existingEntries));
+};
+document.getElementById("go").addEventListener("click", function() {
+    addEntry();
+    // List of all entries
+    console.log(localStorage.getItem("allEntries"));
+    // Last entry inserted
+    console.log(localStorage.getItem("entry"));
+}, false);
 
 
 
@@ -39,7 +56,7 @@ reset_Ls: (var) => {
         var my_array1 = JSON.parse(localStorage.getItem('req'));
         my_array1.push(y);
         //var arrayReq = JSON.parse(localStorage.getItem("req"));
-        
+
         localStorage.setItem('req', JSON.stringify(my_array1));
     }
     try {

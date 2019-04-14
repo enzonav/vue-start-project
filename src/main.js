@@ -24,6 +24,9 @@ Vue.config.productionTip = false
 
 new Vue({
   el: '#app',
+  data: {
+    count: ''
+  },
   router,
   store,
   template: '<App/>',

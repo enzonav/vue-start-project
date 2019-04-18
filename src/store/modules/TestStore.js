@@ -1,6 +1,7 @@
 
 const state = {
-  count: 0
+  mystate: 'Hi, im a state!',
+  score: 0
 }
 
 const getters = {
@@ -8,9 +9,7 @@ const getters = {
 }
 
 const mutations = {
-  increment (state) {
-    state.count++
-  }
+
 }
 
 const actions = {
@@ -18,8 +17,10 @@ const actions = {
 }
 
 export default {
+
   state,
   getters,
   actions,
   mutations
+
 }

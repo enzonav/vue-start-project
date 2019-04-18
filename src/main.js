@@ -26,11 +26,6 @@ new Vue({
   el: '#app',
   store,
   router,
-  computed: {
-    count () {
-      return store.TestStore.state.count
-    }
-  },
   template: '<App/>',
   components: { App }
 })

@@ -9,7 +9,12 @@ const getters = {
 }
 
 const mutations = {
-
+  increment (state) {
+    state.score++
+  },
+  decrement (state) {
+    state.score--
+  }
 }
 
 const actions = {

@@ -1,16 +1,12 @@
-
 export default {
-
   state: {
-    message: 'this is my first state!'
+    message: '',
+    storage: []
   },
   getters: {
-
   },
   mutations: {
-
   },
   actions: {
-
   }
 }

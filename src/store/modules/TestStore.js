@@ -2,17 +2,17 @@
 export default {
 
   state: {
-    message: 'this is my first state!',
-    myVariable: 0
+    Message: 'this is my first state!',
+    MyVariable: [1]    
   },
   getters: {
     someFilter: state => {
-      return state.myVariable[0]
+      return state.MyVariable[1]
     }
   },
   mutations: {
     addToArray (state, value) {
-      state.myVariable.push(value)
+      state.MyVariable.push(value)
     }
   },
   actions: {

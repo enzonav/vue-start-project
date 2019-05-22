@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import TestStore from './modules/TestStore.js'
+import axios from 'axios'
+import MyStore from './modules/MyStore.js'
 
-Vue.use(Vuex)
+Vue.use(Vuex, axios)
 
 export default new Vuex.Store({
   modules: {
-    myStore: TestStore
+    MyModule: MyStore
   },
   state: {},
   getters: {},

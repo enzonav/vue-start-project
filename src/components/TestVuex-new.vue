@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Testing Vuex and Axios!</h2>    
-    <p>Test store msg: {{ message }}</p>
+    <p>Test store msg: {{ this.$store.state.MyModule.Message }}</p>
     <p v-for="(item, index) in posts" :key="index">{{ item.title }}</p>
   </div>
 </template>
@@ -16,10 +16,9 @@ export default {
     this.$store.dispatch('loadPosts')
   },
   computed: {
-    ...mapState({
-      message: state => state.MyModule.message,
-      posts: state => state.MyModule.posts
-    })
+    ...mapState([
+      'posts'
+    ])
   }  
 }
 

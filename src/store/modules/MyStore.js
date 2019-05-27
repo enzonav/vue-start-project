@@ -1,4 +1,4 @@
-import Axios from "axios";
+import Axios from 'axios'
 
 export default {
   state: {
@@ -13,8 +13,8 @@ export default {
     }
   },
   actions: {
-    loadPosts ({commit}) {
-      //console.log('load posts test')
+    loadPosts ({ commit }) {
+      // console.log('load posts test')
       Axios
         .get('https://jsonplaceholder.typicode.com/posts')
         .then(data => {
@@ -26,6 +26,5 @@ export default {
           console.log(error)
         })
     }
-  } 
+  }
 }
-

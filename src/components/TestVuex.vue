@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Testing Vuex and Axios!</h2>    
+    <h2>Testing Vuex and Axios!</h2>
     <p>Test store msg: {{ message }}</p>
     <p v-for="(item, index) in posts" :key="index">{{ item.title }}</p>
   </div>
@@ -11,7 +11,7 @@
 import { mapState } from 'vuex'
 // import { mapGetters } from 'vuex'
 
-export default {  
+export default {
   mounted () {
     this.$store.dispatch('loadPosts')
   },
@@ -20,7 +20,7 @@ export default {
       message: state => state.MyModule.message,
       posts: state => state.MyModule.posts
     })
-  }  
+  }
 }
 
 </script>

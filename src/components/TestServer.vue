@@ -1,8 +1,24 @@
 <template>
   <div>
-    <h2>Testin xdomain api</h2>
-    <p v-for="(item, index) in tests" :key="index">{{ item.name }}</p>
-    <p v-for="(item, index) in tests" :key="index">{{ item.email }}</p>
+    <h2>Testing xdomain db</h2>
+    <p>Inserisci Record</p>
+    <form class="" method="post" @submit.prevent="">
+      <input v-model="title" placeholder="titolo">
+      <input v-model="url" placeholder="url">
+      <button type="submit" name="button">Submit</button>
+    </form>
+    <table border=1>
+      <thead>
+          <th>Titolo</th>
+          <th>Url</th>
+        </thead>
+      <tbody>
+        <tr v-for="(item, index) in tests" :key="index">
+          <td>{{ item.title }}</td>
+          <td>{{ item.url }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -15,11 +31,10 @@ export default {
     this.$store.dispatch('loadTest')
   },
   computed: {
-    ...mapState({      
+    ...mapState({
       tests: state => state.MyModuleNew.tests
     })
   }
-
 }
 
 </script>

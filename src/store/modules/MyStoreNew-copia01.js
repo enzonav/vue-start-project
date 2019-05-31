@@ -15,7 +15,7 @@ export default {
     loadTest ({ commit }) {
       console.log('load posts test')
       Axios
-        .get('https://www.xdomain.it/api/index.php/my-controller/websites')
+        .get('https://www.xdomain.it/api/index.php/example/users')
         .then(data => {
           console.log(data.data)
           let tests = data.data

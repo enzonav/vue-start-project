@@ -1,19 +1,21 @@
 <template>
   <div>
     <h2>Testing xdomain db</h2>
+    <!--
     <p>Inserisci Record</p>
-    <form class="" method="post" @submit.prevent="">
-      <input v-model="title" placeholder="titolo">
-      <input v-model="url" placeholder="url">
+    <form class="" method="post" @submit.prevent="addItem">
+      <input v-model="websites.title" placeholder="titolo">
+      <input v-model="websites.url" placeholder="url">
       <button type="submit" name="button">Submit</button>
     </form>
+    -->
     <table border=1>
       <thead>
           <th>Titolo</th>
           <th>Url</th>
         </thead>
       <tbody>
-        <tr v-for="(item, index) in tests" :key="index">
+        <tr v-for="(item, index) in websites" :key="index">
           <td>{{ item.title }}</td>
           <td>{{ item.url }}</td>
         </tr>
@@ -32,8 +34,13 @@ export default {
   },
   computed: {
     ...mapState({
-      tests: state => state.MyModuleNew.tests
+      websites: state => state.Module1.websites
     })
+  },
+  methods: {
+    addItem () {
+      this.$store.dispatch('addItem')
+    }
   }
 }
 

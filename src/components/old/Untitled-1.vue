@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-</head>
-<body>
-<div id="app"></div>
-<script>
 var title = "";
 Vue.component('create_new_entry', {
     template: '<div><div class="row"><h1 v-on:click="test()">{{title}}</h1><div class="col-md-12"><section_title :title="title" @title-changed="changeTitle"></section_title></div></div></div>',
@@ -43,9 +34,3 @@ Vue.component('section_title', {
         }
     }
 });
- 
-    </script>   
-</div>   
-</body>
-</html>
-

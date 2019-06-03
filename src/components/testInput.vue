@@ -1,25 +1,30 @@
 <template>
   <div>
-    <h2>Test Input Binding in Vuex</h2>
-    <div>
-      <form>
-        <input @change="update">
-        <input @change="update">
-      </form>
-    </div>
+    <h1>Hi i come from testInput component</h1>
+    <p v-on:click="test()">{{title}}</p>>
+    <myTest :title="title" @title-changed="changeTitle"></myTest>
   </div>
+
 </template>
 
 <script>
 
-export default {
-  computed: {
-    update () {
-      return true
-    }
-  }
-}
+import myTest from './myTest.vue'
 
+let title = ''
+export default {
+  data: function () {
+    return {
+      title: title
+    }
+  },
+  methods: {
+    changeTitle (newTitle) {
+      this.title = newTitle
+    }
+  },
+  components: { myTest }
+}
 </script>
 
-<style ></style>
+<style></style>

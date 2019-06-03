@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Testing xdomain db</h2>
+    <h2>Testing  db</h2>
     <!--
     <p>Inserisci Record</p>
     <form class="" method="post" @submit.prevent="addItem">

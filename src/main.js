@@ -11,6 +11,9 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
 
+/* creating an event bus with no rendere vue instance */
+export const eventBus = new Vue()
+
 const router = new VueRouter({
   routes,
   mode: 'history'

@@ -1,34 +1,33 @@
 <template>
     <div class="component">
-        <h1>The User Component</h1>
-        <p>I'm an awesome User!</p>
-        <button @click="changeName">Change my name</button>
-        <p>Name in parent is {{ name }}</p>
-        <hr>
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <app-user-detail
-                    :myName="name"
-                    @nameWasReset="name = $event"
-                    :resetFn="resetName"></app-user-detail>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <app-user-edit :userAge="age"></app-user-edit>
-            </div>
-        </div>
+      <h3>Parent Component</h3>
+      <p>Data -> name, age -> returned vaue: {{ name }} </p>
+      <p>Methods -> Parent -> changeName<p>
+      <button @click="changeName">changeName</button>
+      <p>Child1 -> props -> myName (type and default: 'lucas'), methods -> switchName, resetName, </p>
+      <p>eventBus $on ('ageWasEdited', (age) => {this.userAge = age } </p>
+      <br>
+      <hr>
+      <Component1
+        :myName="name"
+        @nameWasReset="name = $event"
+        :resetFn="resetName">
+      </Component1>
+      <hr>
+      <Component2 :userAge="age"></Component2>
     </div>
 </template>
 
 <script>
 
-import UserDetail from './UserDetail.vue'
-import UserEdit from './UserEdit.vue'
+import ChildComponent1 from './ChildComponent1.vue'
+import ChildComponent2 from '././ChildComponent2.vue'
 
 export default {
   props: ['userAge'],
   data: function () {
     return {
-      name: 'Lucas',
+      name: 'start name',
       age: 21
     }
   },
@@ -37,15 +36,15 @@ export default {
   },
   methods: {
     changeName: function () {
-      this.name = 'Jenny'
+      this.name = 'methods -> changeName'
     },
     resetName: function () {
-      this.name = 'Jenny'
+      this.name = 'Child 1 -> restFn -> Parent -> methods -> resetName'
     }
   },
   components: {
-    appUserDetail: UserDetail,
-    appUserEdit: UserEdit
+    Component1: ChildComponent1,
+    Component2: ChildComponent2
   }
 }
 </script>

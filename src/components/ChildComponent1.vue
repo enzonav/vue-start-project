@@ -1,15 +1,16 @@
 <template>
-    <div class="component">
-        <h3>You may view the User Details here</h3>
-        <p>Many Details</p>
-        <p>User name: {{ switchName() }} </p>
-        <p>User age: {{ userAge }} </p>
-        <button @click="resetName">Reset name</button>
-        <button @click="resetFn()">Reset name using CB function</button>
-    </div>
+  <div class="component">
+    <p>methods -> switchName: {{ switchName() }} </p>
+    <p>Child1: $emit.om(ageWasEdited, age  return this.age) Parent: data -> age: {{ userAge }} </p>
+    <p>valori e funzioni esportati a Parent,
+    <p>values :myName="name" @nameWasReset="name = $event" :resetFn="resetName"</p>
+    <button @click="resetName">resetName</button>
+    <button @click="resetFn()">reserFn</button>
+  </div>
 </template>
 
 <script>
+
 import { eventBus } from '../main'
 export default {
   props: {
@@ -26,7 +27,7 @@ export default {
       return this.myName.split('').reverse().join('')
     },
     resetName: function () {
-      this.myName = 'Lucas'
+      this.myName = 'Child1 -> methods -> resetName -> $emit nameWasReset'
       this.$emit('nameWasReset', this.myName)
     }
   },

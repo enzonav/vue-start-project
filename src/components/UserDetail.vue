@@ -11,7 +11,6 @@
 
 <script>
 import { eventBus } from '../main'
-
 export default {
   props: {
     myName: {
@@ -40,4 +39,3 @@ export default {
 </script>
 
 <style scoped> </style>
-

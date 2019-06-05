@@ -20,6 +20,7 @@
 </template>
 
 <script>
+
 import UserDetail from './UserDetail.vue'
 import UserEdit from './UserEdit.vue'
 
@@ -32,7 +33,7 @@ export default {
     }
   },
   computed: {
-    
+
   },
   methods: {
     changeName: function () {
@@ -50,4 +51,3 @@ export default {
 </script>
 
 <style ></style>
-

@@ -6,7 +6,7 @@
       <router-link to="/contacts">Contacts</router-link>
       <router-link to="/test-server">Test Server</router-link>
       <router-link to="/test-input">Test Input </router-link>
-      <router-link to="/sharing-components">Test Shared Componens</router-link>
+      <!--<router-link to="/sharing-components">Test Shared Componens</router-link>-->
       <!--<a href="https://www.xdomain.it/guides/rest-server" target="_blank">Rest Server Doc</a> -->
       <!--<router-link to="/test-vuex">Test Vuex</router-link>-->
     </div>

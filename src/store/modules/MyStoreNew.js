@@ -1,8 +1,10 @@
 import Axios from 'axios'
 
+//import { eventBus } from '/main'
+
 export default {
   state: {
-    websites: []
+    websites: []    
   },
   getters: {
   },
@@ -10,6 +12,11 @@ export default {
     SET_TESTS (state, websites) {
       state.websites = websites
     }
+    /*
+    ADD_ITEM (state, payload) {
+      state.message = payload.title + payload.url
+    }
+    */
   },
   actions: {
     loadTest ({ commit }) {
@@ -25,19 +32,25 @@ export default {
           console.log(error)
         })
     },
-    addItem ({ commit }) {
-      console.log('test add item')
-      alert('Form funziona')
-      /*
+    /*
+    no change in you action
+    yourAction: ({commit}, payload) => {
+      commit('YOUR_MUTATION',  payload )
+    },
+
+  */
+    addItem ({ commit }, myValues) {
+      console.log('into the store')
+      console.log(myValues.title + myValues.url + '?')
       Axios
-        .post('https://www.xdomain.it/api/index.php/my_controller/add_website', {})
-        .then(data => {
-          console.log(data.data)
+        .post('https://www.xdomain.it/api/index.php/my_controller/add_website', myValues)
+        .then(response => {
+          console.log(response.res)
+          //eventBus.$emit('Message', response.res)
         })
         .catch(error => {
           console.log(error)
         })
-      */
     }
   }
 }

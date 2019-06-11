@@ -1,10 +1,13 @@
 import Axios from 'axios'
 
-//import { eventBus } from '/main'
+import { eventBus } from '../../main'
+// src/store/modules/MyStoreNew.js
+// src/main.js
+// import { eventBus } from '../main'
 
 export default {
   state: {
-    websites: []    
+    websites: []
   },
   getters: {
   },
@@ -37,16 +40,17 @@ export default {
     yourAction: ({commit}, payload) => {
       commit('YOUR_MUTATION',  payload )
     },
-
-  */
-    addItem ({ commit }, myValues) {
+    */
+    addItem ({ commit, dispatch }, myValues) {
       console.log('into the store')
       console.log(myValues.title + myValues.url + '?')
       Axios
         .post('https://www.xdomain.it/api/index.php/my_controller/add_website', myValues)
         .then(response => {
-          console.log(response.res)
-          //eventBus.$emit('Message', response.res)
+          // console.log('server response ' + response.res)
+          dispatch('status_update', {
+            'status': response.res.status
+          })
         })
         .catch(error => {
           console.log(error)

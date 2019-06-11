@@ -46,17 +46,13 @@
 </template>
 
 <script>
-
 import { mapState } from 'vuex'
-
 /*
 @2 - And fetch the data in your store :
-
 removeFromTheCart({ commit }, { index, price }) {
   console.log('index', index, 'price', price);
 }
 */
-
 export default {
   data () {
     return {
@@ -71,7 +67,7 @@ export default {
   },
   computed: {
     ...mapState({
-      websites: state => state.Module1.websites
+      websites: state => state.store_db.websites
     })
   },
   methods: {
@@ -85,7 +81,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style ></style>

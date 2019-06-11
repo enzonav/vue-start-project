@@ -49,7 +49,7 @@ export default {
         .then(response => {
           // console.log('server response ' + response.res)
           dispatch('status_update', {
-            'status': response.res.status
+            'status': response.status
           })
         })
         .catch(error => {

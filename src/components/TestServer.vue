@@ -2,34 +2,11 @@
   <div>
     <h2>Testing  db</h2>
     <br>
-    <!--
-    @1-You can send an object as your payload, like this :
-    <button class="btn" @click="removeFromTheCart({ index, price: item.price })">Remove</button>
-    -->
-    <table border=1>
-      <tbody>
-        <tr>
-          <td><input placeholder="titolo" v-model="myData.title"></td>
-          <td><p>Url input: {{ myData.title }}</p></td>
-        </tr>
-        <tr>
-          <td><input placeholder="url" v-model="myData.url"></td>
-          <!--<button @click="addItemAction({ title: myData.title, url: myData.url })">Add site</button>-->
-          <button @click="addItem(myData.title, myData.url)">Add site</button>
-          <!--<p > {this.userAge = age } </p>-->
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <input placeholder="titolo" v-model="myData.title">
+    <p>Url input: {{ myData.title }}</p>
+    <input placeholder="url" v-model="myData.url">
+    <button @click="addItem(myData.title, myData.url)">Add site</button>
     <p>Websites Title</p>
-    <!--
-    <p>Inserisci Record</p>
-    <form class="" method="post" @submit.prevent="addItem">
-      <input v-model="websites.title" placeholder="titolo">
-      <input v-model="websites.url" placeholder="url">
-      <button type="submit" name="button">Submit</button>
-    </form>
-    -->
     <table border=1>
       <thead>
           <th>Titolo</th>

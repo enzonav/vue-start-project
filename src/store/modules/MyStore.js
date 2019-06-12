@@ -12,9 +12,9 @@ export default {
     }
   },
   actions: {
-    status_update ({ commit }, status) {
-      console.log('into the II store module')
-      commit('UPDATE_STATUS', status)
+    status_update ({ commit }, payload) {
+      console.log('into the II store module' + payload.message)
+      commit('UPDATE_STATUS', payload)
     }
   }
 }

@@ -47,10 +47,8 @@ export default {
       Axios
         .post('https://www.xdomain.it/api/index.php/my_controller/add_website', myValues)
         .then(response => {
-          // console.log('server response ' + response.res)
-          dispatch('status_update', {
-            'status': response.status
-          })
+          // console.log('server response ' + response['status'])
+          dispatch('status_update', { response })
         })
         .catch(error => {
           console.log(error)

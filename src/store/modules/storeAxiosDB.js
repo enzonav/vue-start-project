@@ -27,7 +27,7 @@ export default {
       Axios
         .get('https://www.xdomain.it/api/index.php/my-controller/websites')
         .then(response => {
-          console.log(response.data)
+          // console.log(response.data)
           let websites = response.data
           commit('SET_TESTS', websites)
         })
@@ -42,13 +42,16 @@ export default {
     },
     */
     addItem ({ commit, dispatch }, myValues) {
-      console.log('into the store')
-      console.log(myValues.title + myValues.url + '?')
+      // console.log('into the store')
+      // console.log(myValues.title + myValues.url + '?')
       Axios
         .post('https://www.xdomain.it/api/index.php/my_controller/add_website', myValues)
         .then(response => {
-          // console.log('server response ' + response['status'])
-          dispatch('status_update', { response })
+          console.log('server response ' + response.data.message)
+          let message = {
+            'message': response.data.message
+          }
+          dispatch('status_update', { message })
         })
         .catch(error => {
           console.log(error)

@@ -2,6 +2,9 @@
   <div>
     <h2>Testing  db</h2>
     <br>
+    <h1 v-if="status === 'success'">Status request: Success</h1>
+    <h1 v-else-if="status === 'error'">Status request: Error</h1>
+    <h1 v-else>Loading</h1>
     <input placeholder="titolo" v-model="myData.title">
     <p>Url input: {{ myData.title }}</p>
     <input placeholder="url" v-model="myData.url">
@@ -44,7 +47,8 @@ export default {
   },
   computed: {
     ...mapState({
-      websites: state => state.store_db.websites
+      websites: state => state.store_db.websites,
+      status: state => state.store_my.status
     })
   },
   methods: {

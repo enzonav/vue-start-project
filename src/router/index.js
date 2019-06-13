@@ -4,7 +4,8 @@ import Contacts from '../components/Contacts.vue'
 import TestVuex from '../components/TestVuex.vue'
 import testInput from '../components/testInput.vue'
 import TestServer from '../components/TestServer.vue'
-import Sharing from '../components/Sharing.vue'
+import newComponent from '../components/newComponent.vue'
+// import Sharing from '../components/Sharing.vue'
 
 export const routes = [
   { path: '/', component: Home },
@@ -13,5 +14,15 @@ export const routes = [
   { path: '/test-vuex', component: TestVuex },
   { path: '/test-server', component: TestServer },
   { path: '/test-input', component: testInput },
+  { path: '/test-watch', component: newComponent }
+  /*
   { path: '/sharing-components', component: Sharing }
+  */
 ]
+
+/*
+1 - create component
+2 - import component
+2 - create route
+3-  create router link in header.vue
+*/

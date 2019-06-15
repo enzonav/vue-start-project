@@ -5,6 +5,7 @@ import TestVuex from '../components/TestVuex.vue'
 import testInput from '../components/testInput.vue'
 import TestServer from '../components/TestServer.vue'
 import newComponent from '../components/newComponent.vue'
+import headerComponent from '../components/pComponent.vue'
 // import Sharing from '../components/Sharing.vue'
 
 export const routes = [
@@ -14,7 +15,8 @@ export const routes = [
   { path: '/test-vuex', component: TestVuex },
   { path: '/test-server', component: TestServer },
   { path: '/test-input', component: testInput },
-  { path: '/test-watch', component: newComponent }
+  { path: '/test-watch', component: newComponent },
+  { path: '/data-fetch', component: headerComponent }
   /*
   { path: '/sharing-components', component: Sharing }
   */

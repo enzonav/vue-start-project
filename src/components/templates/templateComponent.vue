@@ -1,15 +1,9 @@
 <template>
-  <div>
-    <h2>I'm a component Template</h2>
-  </div>
+<div>
+  <h2>I'm a Page!</h2>
+</div>
 </template>
 
 <script>
-
-export default {
-
-}
-
+export default {}
 </script>
-
-<style ></style>

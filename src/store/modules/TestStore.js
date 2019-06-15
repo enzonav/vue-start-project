@@ -1,11 +1,11 @@
 export default {
   state: {
-    category: 'AC'
+    action: 'Start'
   },
   mutations: {
     SET_CAT (state, response) {
       console.log('SET_CAT')
-      state.category = response
+      state.action = response
     }
   },
   actions: {

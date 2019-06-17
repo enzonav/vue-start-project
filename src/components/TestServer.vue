@@ -17,7 +17,7 @@
         </thead>
       <tbody>
         <tr v-for="(item, index) in websites" :key="index">
-          <td>{{ item.title }}</td>
+          <td>{{ item.title }} -- {{ index }}</td>
           <td>{{ item.url }}</td>
         </tr>
       </tbody>

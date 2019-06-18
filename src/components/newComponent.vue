@@ -9,6 +9,8 @@
     <option value="releasing">Releasing</option>
   </select>
   <p>Selected Action : {{action}}</p>
+  Kilometers : <input type = "text" v-model = "kilometers">
+  Meters : <input type = "text" v-model = "meters">
   <!--
   <component-to-re-render :key="componentKey" />
   -->
@@ -39,6 +41,9 @@ export default {
   */
   data () {
     return {
+      kilometers: 0,
+      meters: 0,
+      ahah: 'vediamo'
     }
   },
   computed: {
@@ -50,6 +55,15 @@ export default {
         console.log('Value of category changed')
         this.$store.commit('SET_CAT', value)
       }
+    }
+  },
+  watch: {
+    kilometers: function (val) {
+      this.kilometers = val
+      this.meters = val * 1000
+    },
+    meters: function (val) {
+      this.kilometers = val / 1000
     }
   }
 }

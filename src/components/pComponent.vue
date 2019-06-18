@@ -1,9 +1,7 @@
 <template>
 <div>
   <h2>I'm a Page!</h2>
-  <div>
-    {{ my_action }}
-  </div>
+  <div>{{ my_action }}</div>
   <mainComponent></mainComponent>
 </div>
 </template>
@@ -36,11 +34,6 @@ export default {
       // Or return basket.getters.fruitsCount
       // (depends on your design decisions).
     } */
-  },
-  watch: {
-    test () {
-      console.log('boh, qualcosa è accaduto')
-    }
   },
   /*
     count (newCount, oldCount) {

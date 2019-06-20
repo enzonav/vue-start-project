@@ -11,21 +11,13 @@
   <p>Selected Action : {{action}}</p>
   Kilometers : <input type = "text" v-model = "kilometers">
   Meters : <input type = "text" v-model = "meters">
-  <!--
-  <component-to-re-render :key="componentKey" />
-  -->
-  <!--
-  <h1 v-if="category === 'start'">Start</h1>
-  <h1 v-else-if="category === 'load'">Load</h1>
-  <h1 v-else-if="category === 'loaded'">Loaded</h1>
-  <h1 v-else>Loading</h1>
-  <p>Selected Category : {{category}}</p>
-  -->
-
 </div>
 </template>
 
 <script>
+
+import { mapState } from 'vuex'
+
 export default {
   /*
   data() {
@@ -46,6 +38,9 @@ export default {
       ahah: 'vediamo'
     }
   },
+  beforeCreate () {
+    console.log('beforeCreate', this)
+  },
   computed: {
     action: {
       get () {
@@ -55,7 +50,26 @@ export default {
         console.log('Value of category changed')
         this.$store.commit('SET_CAT', value)
       }
+    },
+    my_action: {
+      get () {
+        return this.$store.state.store_test.action
+      },
+      set (value) {
+        console.log('Value of category changed')
+        this.$store.commit('SET_CAT', value)
+      }
     }
+    /*
+    computedColor: {
+      set(value) {
+        this.setColor(value)
+      },
+      get() {
+        return this.color()
+      }
+    },
+    */
   },
   watch: {
     kilometers: function (val) {

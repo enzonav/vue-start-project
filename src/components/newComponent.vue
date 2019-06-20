@@ -9,6 +9,8 @@
     <option value="releasing">Releasing</option>
   </select>
   <p>Selected Action : {{action}}</p>
+  <p>Selected Action : {{getAction}}</p>
+
   Kilometers : <input type = "text" v-model = "kilometers">
   Meters : <input type = "text" v-model = "meters">
 </div>
@@ -16,33 +18,21 @@
 
 <script>
 
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
-  /*
-  data() {
-    return {
-      componentKey: 0,
-    };
-  },
-  methods: {
-    forceRerender() {
-      this.componentKey += 1;
-    }
-  }
-  */
+ 
   data () {
     return {
       kilometers: 0,
-      meters: 0,
-      ahah: 'vediamo'
+      meters: 0
     }
   },
   beforeCreate () {
     console.log('beforeCreate', this)
   },
-  computed: {
-    action: {
+  computed: {    
+    action: {      
       get () {
         return this.$store.state.store_test.action
       },
@@ -50,27 +40,8 @@ export default {
         console.log('Value of category changed')
         this.$store.commit('SET_CAT', value)
       }
-    },
-    my_action: {
-      get () {
-        return this.$store.state.store_test.action
-      },
-      set (value) {
-        console.log('Value of category changed')
-        this.$store.commit('SET_CAT', value)
-      }
-    }
-    /*
-    computedColor: {
-      set(value) {
-        this.setColor(value)
-      },
-      get() {
-        return this.color()
-      }
-    },
-    */
-  },
+    }    
+  },  
   watch: {
     kilometers: function (val) {
       this.kilometers = val
@@ -82,3 +53,4 @@ export default {
   }
 }
 </script>
+

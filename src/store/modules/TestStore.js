@@ -2,7 +2,9 @@ export default {
   state: {
     action: 'Start'
   },
-  getter: {},
+  getter: {
+    getAction: state => state.action
+  },
   mutations: {
     SET_CAT (state, response) {
       console.log('SET_CAT')

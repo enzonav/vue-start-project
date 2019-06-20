@@ -21,7 +21,7 @@
 import { mapState, mapGetters } from 'vuex'
 
 export default {
- 
+
   data () {
     return {
       kilometers: 0,
@@ -31,17 +31,19 @@ export default {
   beforeCreate () {
     console.log('beforeCreate', this)
   },
-  computed: {    
-    action: {      
+  computed: {
+    ...mapGetters(['getAction']),
+    action: {
       get () {
-        return this.$store.state.store_test.action
+        // return this.$store.state.store_test.action
+        return this.$store.getters.getAction
       },
       set (value) {
         console.log('Value of category changed')
         this.$store.commit('SET_CAT', value)
       }
-    }    
-  },  
+    }
+  },
   watch: {
     kilometers: function (val) {
       this.kilometers = val
@@ -53,4 +55,3 @@ export default {
   }
 }
 </script>
-

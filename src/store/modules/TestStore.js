@@ -2,7 +2,7 @@ export default {
   state: {
     action: 'Start'
   },
-  getter: {
+  getters: {
     getAction: state => state.action
   },
   mutations: {

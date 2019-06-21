@@ -3,7 +3,7 @@ export default {
     status: 'pending'
   },
   getters: {
-    status: state => state.status
+    getStatus: state => state.status
   },
   mutations: {
     UPDATE_STATUS (state, response) {

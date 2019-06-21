@@ -16,7 +16,7 @@
           <th>Url</th>
         </thead>
       <tbody>
-        <tr v-for="(item, index) in websites" :key="index">
+        <tr v-for="(item, index) in getData" :key="index">
           <td>{{ item.title }} -- {{ index }}</td>
           <td>{{ item.url }}</td>
         </tr>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 /*
 @2 - And fetch the data in your store :
 removeFromTheCart({ commit }, { index, price }) {
@@ -47,9 +47,10 @@ export default {
   },
   computed: {
     ...mapState({
-      websites: state => state.store_db.websites,
+      /* websites: state => state.store_db.websites, */
       status: state => state.store_my.status
-    })
+    }),
+    ...mapGetters(['getData'])
   },
   methods: {
     addItem (title, url) {

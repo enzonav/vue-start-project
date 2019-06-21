@@ -10,6 +10,7 @@ export default {
     websites: []
   },
   getters: {
+    getData: state => state.websites
   },
   mutations: {
     SET_TESTS (state, websites) {

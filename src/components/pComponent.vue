@@ -1,15 +1,21 @@
 <template>
 <div>
   <h2>I'm a Page!</h2>
-  <div>{{ my_action }}</div>
+  <h4>testStore: {{ getAction }}</h4>
+  <h4 v-if="getStatus.message === 'success'">myStore: success</h4>
+  <h4 v-else-if="getStatus.message === 'error'">myStore: error</h4>
+  <h4 v-else>mah</h4>
+  <h4>testing internal funcion: {{my_test}} </h4>
   <mainComponent></mainComponent>
 </div>
 </template>
 
 <script>
 
+import { mapGetters } from 'vuex'
+/* import { mapState } from 'vuex' */
+
 import mainComponent from './cComponent.vue'
-import { mapState } from 'vuex'
 
 export default {
 
@@ -22,30 +28,17 @@ export default {
     }
   },
   computed: {
+    /*
     ...mapState({
       my_action: state => state.store_test.action
     }),
-    test () {
-      return this.$store.state.store_test.action
-    }
-    /*
-    count () {
-      return basket.state.fruits.length
-      // Or return basket.getters.fruitsCount
-      // (depends on your design decisions).
-    } */
-  },
-  /*
-    count (newCount, oldCount) {
-      // Our fancy notification (2).
-      console.log(`We have ${newCount} fruits now, yaay!`)
-    }
-    action: {
-      get () {
-        return this.$store.state.store_test.action
-      }
-    }
     */
+    ...mapGetters(['getAction', 'getStatus']),
+    my_test () {
+      // console.log('mmmm' + this.getAction)
+      return this.getAction
+    }
+  },
   beforeCreate () {
     console.log('beforeCreate', this)
   },

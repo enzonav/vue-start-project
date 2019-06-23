@@ -1,6 +1,7 @@
 <template>
 <div>
-  <h2>I'm a Page!</h2>
+  <hr>
+  <p>I'm a child component!</p>
 </div>
 </template>
 

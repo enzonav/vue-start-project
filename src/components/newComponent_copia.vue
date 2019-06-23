@@ -8,7 +8,7 @@
     <option value="loaded">Loaded</option>
     <option value="releasing">Releasing</option>
   </select>
-  <!--<p>Selected Action : {{action}}</p>-->
+  <p>Selected Action : {{action}}</p>
   <p>Selected Action : {{getAction}}</p>
 
   Kilometers : <input type = "text" v-model = "kilometers">
@@ -18,7 +18,7 @@
 
 <script>
 
-import { mapState, mapGetters, mapActions } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
 
@@ -33,23 +33,18 @@ export default {
   },
   computed: {
     ...mapGetters(['getAction']),
-    ...mapActions(['change_action']),
     action: {
       get () {
         // return this.$store.state.store_test.action
         return this.$store.getters.getAction
       },
       set (value) {
-        // this.change_action(value)
         console.log('Value of category changed')
         this.$store.commit('SET_CAT', value)
       }
     }
   },
   watch: {
-    function_change (value) {
-      console.log('Whatch funcion Value of category changed')
-    },
     kilometers: function (val) {
       this.kilometers = val
       this.meters = val * 1000

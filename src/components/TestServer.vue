@@ -1,14 +1,12 @@
 <template>
   <div>
     <h2>Testing  db</h2>
+    <h4>Testing  store {{ getStatus.message }}</h4>
     <br>
-    <h1 v-if="status === 'success'">Status request: Success</h1>
-    <h1 v-else-if="status === 'error'">Status request: Error</h1>
-    <h1 v-else>Loading</h1>
-    <input placeholder="titolo" v-model="myData.title">
-    <p>Url input: {{ myData.title }}</p>
-    <input placeholder="url" v-model="myData.url">
-    <button @click="addItem(myData.title, myData.url)">Add site</button>
+    <input placeholder="titolo" v-model="my_data.title">
+    <p>Url input: {{ my_data.title }}</p>
+    <input placeholder="url" v-model="my_data.url">
+    <button @click="addItem(my_data.title, my_data.url)">Add site</button>
     <p>Websites Title</p>
     <table border=1>
       <thead>
@@ -26,7 +24,8 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
+/* import { mapState, mapGetters } from 'vuex' */
+import { mapGetters } from 'vuex'
 /*
 @2 - And fetch the data in your store :
 removeFromTheCart({ commit }, { index, price }) {
@@ -36,7 +35,7 @@ removeFromTheCart({ commit }, { index, price }) {
 export default {
   data () {
     return {
-      myData: {
+      my_data: {
         title: '',
         url: ''
       }
@@ -46,11 +45,13 @@ export default {
     this.$store.dispatch('loadTest')
   },
   computed: {
+    /*
     ...mapState({
-      /* websites: state => state.store_db.websites, */
+      websites: state => state.store_db.websites,
       status: state => state.store_my.status
     }),
-    ...mapGetters(['getData'])
+    */
+    ...mapGetters(['getData', 'getStatus'])
   },
   methods: {
     addItem (title, url) {

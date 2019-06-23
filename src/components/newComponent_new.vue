@@ -1,7 +1,7 @@
 <template>
 <div>
   <h2>I'm New Component</h2>
-  <select name="Category" v-model="action">
+  <select name="Category" v-model="change_action">
     <option value="" disabled hidden>Select Product</option>
     <option value="start">Start</option>
     <option value="load">Load</option>
@@ -33,18 +33,20 @@ export default {
   },
   computed: {
     ...mapGetters(['getAction']),
-    ...mapActions(['change_action']),
+    ...mapActions(['change_action'])
+    /*
     action: {
       get () {
         // return this.$store.state.store_test.action
         return this.$store.getters.getAction
       },
       set (value) {
-        // this.change_action(value)
+        this.change_action(value)
         console.log('Value of category changed')
-        this.$store.commit('SET_CAT', value)
+        // this.$store.commit('SET_CAT', value)
       }
     }
+    */
   },
   watch: {
     function_change (value) {

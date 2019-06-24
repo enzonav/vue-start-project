@@ -18,7 +18,7 @@
 
 <script>
 
-import { mapState, mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
 
@@ -33,23 +33,21 @@ export default {
   },
   computed: {
     ...mapGetters(['getAction']),
-    ...mapActions(['change_action']),
+    ...mapMutations(['SET_CAT']),
     action: {
       get () {
-        // return this.$store.state.store_test.action
-        return this.$store.getters.getAction
+        //return this.$store.state.store_test.action
+        return this.getAction
       },
       set (value) {
         // this.change_action(value)
         console.log('Value of category changed')
+        //return this.SET_CAT(value)
         this.$store.commit('SET_CAT', value)
       }
     }
   },
-  watch: {
-    function_change (value) {
-      console.log('Whatch funcion Value of category changed')
-    },
+  watch: {    
     kilometers: function (val) {
       this.kilometers = val
       this.meters = val * 1000

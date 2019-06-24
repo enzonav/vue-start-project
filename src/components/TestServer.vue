@@ -15,7 +15,7 @@
         </thead>
       <tbody>
         <tr v-for="(item, index) in getData" :key="index">
-          <td>{{ item.title }} -- {{ index }}</td>
+          <td>{{ item.title }}</td>
           <td>{{ item.url }}</td>
         </tr>
       </tbody>
@@ -25,7 +25,7 @@
 
 <script>
 /* import { mapState, mapGetters } from 'vuex' */
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 /*
 @2 - And fetch the data in your store :
 removeFromTheCart({ commit }, { index, price }) {
@@ -41,17 +41,23 @@ export default {
       }
     }
   },
-  mounted () {
+  mounted () {    
     this.$store.dispatch('loadTest')
+    /*
+    test () {
+      return this.loadTest
+    }
+    */
   },
   computed: {
+    ...mapGetters(['getData', 'getStatus']),
+    ...mapActions(['loadTest'])
     /*
     ...mapState({
       websites: state => state.store_db.websites,
       status: state => state.store_my.status
     }),
-    */
-    ...mapGetters(['getData', 'getStatus'])
+    */    
   },
   methods: {
     addItem (title, url) {

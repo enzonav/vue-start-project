@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Testing  db</h2>
-    <h4>Testing  store {{ getStatus.message }}</h4>
+    <h4>Add item response: {{ getStatus.message }}</h4>
     <br>
     <input placeholder="titolo" v-model="my_data.title">
     <p>Url input: {{ my_data.title }}</p>
@@ -24,14 +24,9 @@
 </template>
 
 <script>
-/* import { mapState, mapGetters } from 'vuex' */
+
 import { mapGetters, mapActions } from 'vuex'
-/*
-@2 - And fetch the data in your store :
-removeFromTheCart({ commit }, { index, price }) {
-  console.log('index', index, 'price', price);
-}
-*/
+
 export default {
   data () {
     return {
@@ -41,23 +36,23 @@ export default {
       }
     }
   },
-  mounted () {    
-    this.$store.dispatch('loadTest')
+  mounted () {
     /*
-    test () {
-      return this.loadTest
-    }
+    try to call the dispatch action from computed property
+    this.$store.dispatch('getServerData')
     */
   },
   computed: {
     ...mapGetters(['getData', 'getStatus']),
-    ...mapActions(['loadTest'])
+    fetchData: function () {
+      return this.$store.dispatch('getServerData')
+    }
     /*
     ...mapState({
       websites: state => state.store_db.websites,
       status: state => state.store_my.status
     }),
-    */    
+    */
   },
   methods: {
     addItem (title, url) {

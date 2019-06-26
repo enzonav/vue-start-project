@@ -4,8 +4,8 @@
   <h4>testStore: {{ getAction }}</h4>
   <h4 v-if="getStatus.message === 'success'">myStore: success</h4>
   <h4 v-else-if="getStatus.message === 'error'">myStore: error</h4>
-  <h4 v-else>mah</h4>
-  <h4>testing internal funcion: {{my_test}} </h4>
+  <h4 v-else>status not set</h4>
+  <h4>testing map helper getter: {{my_test}} </h4>
   <mainComponent></mainComponent>
 </div>
 </template>
@@ -35,7 +35,7 @@ export default {
     */
     ...mapGetters(['getAction', 'getStatus']),
     my_test () {
-      // console.log('mmmm' + this.getAction)
+      console.log('computed')
       return this.getAction
     }
   },

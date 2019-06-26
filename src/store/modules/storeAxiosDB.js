@@ -10,7 +10,10 @@ export default {
     websites: []
   },
   getters: {
-    getData: state => state.websites
+    getData: state => state.websites,
+    countLinks: state => {
+      return state.websites.length
+    }   
   },
   mutations: {
     SET_TESTS (state, websites) {
@@ -23,7 +26,7 @@ export default {
     */
   },
   actions: {
-    loadTest ({ commit }) {
+    getServerData ({ commit }) {
       console.log('load posts test')
       Axios
         .get('https://www.xdomain.it/api/index.php/my-controller/websites')
@@ -36,15 +39,7 @@ export default {
           console.log(error)
         })
     },
-    /*
-    no change in you action
-    yourAction: ({commit}, payload) => {
-      commit('YOUR_MUTATION',  payload )
-    },
-    */
     addItem ({ commit, dispatch }, myValues) {
-      // console.log('into the store')
-      // console.log(myValues.title + myValues.url + '?')
       Axios
         .post('https://www.xdomain.it/api/index.php/my_controller/add_website', myValues)
         .then(response => {

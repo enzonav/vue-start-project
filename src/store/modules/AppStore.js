@@ -8,12 +8,12 @@ export default {
     getStatus: state => state.status
   },
   mutations: {
-    UPDATE_STATUS (state, response) {
+    updateStatus (state, response) {
       console.log('into the II mutations')
       state.status = response.message
     },
-    SET_CAT (state, response) {
-      console.log('SET_CAT')
+    updateAction (state, response) {
+      console.log('updateAction')
       state.action = response
     }
   },
@@ -21,10 +21,10 @@ export default {
     fetch_cat: (state) => {},
     status_update ({ commit }, response) {
       console.log('into the II store module')
-      commit('UPDATE_STATUS', response)
+      commit('updateStatus', response)
     },
     change_action ({ commit }, response) {
-      commit('SET_CAT', response)
+      commit('updateAction', response)
     }
   }
 }

@@ -11,7 +11,7 @@ export default {
   },
   getters: {
     getData: state => state.websites,
-    countLinks: state => {
+    returnIndex: state => {
       return state.websites.length
     }   
   },

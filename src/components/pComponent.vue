@@ -6,6 +6,7 @@
   <h4 v-else-if="getStatus.message === 'error'">myStore: error</h4>
   <h4 v-else>status not set</h4>
   <h4>testing map helper getter: {{my_test}} </h4>
+  <h4>Array lenght: {{ array_index  }}</h4>
   <mainComponent></mainComponent>
 </div>
 </template>
@@ -33,10 +34,17 @@ export default {
       my_action: state => state.store_test.action
     }),
     */
-    ...mapGetters(['getAction', 'getStatus']),
+    ...mapGetters(['getAction', 'getStatus', 'returnIndex']),
     my_test () {
       console.log('computed')
       return this.getAction
+    },
+    array_index () {
+      // console.log('computed')
+      if(this.returnIndex === 0) {
+        alert('aleeee')
+      }
+      return this.returnIndex
     }
   },
   beforeCreate () {

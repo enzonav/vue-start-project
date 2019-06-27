@@ -1,7 +1,7 @@
 <template>
 <div>
   <h2>I'm a Page!</h2>
-  <h4>testStore: {{ getAction }}</h4>
+  <h4>action: {{ getAction }}</h4>
   <h4 v-if="getStatus.message === 'success'">myStore: success</h4>
   <h4 v-else-if="getStatus.message === 'error'">myStore: error</h4>
   <h4 v-else>status not set</h4>
@@ -41,10 +41,32 @@ export default {
     },
     array_index () {
       // console.log('computed')
-      if(this.returnIndex === 0) {
-        alert('aleeee')
+      if (this.returnIndex === 0) {
+        if (this.getStatus === 'not_set') {
+          this.fetchData()
+          this.changeAction('function called')
+          // this.updateStatus('success')
+          // here dispach action loadTest
+        }
       }
       return this.returnIndex
+    }
+  },
+  methods: {
+    changeAction (value) {
+      // this.change_action(value)
+      // console.log('Value of category changed')
+      // return this.updateAction(value)
+      return this.$store.commit('updateAction', value)
+    },
+    updateStatus (value) {
+      // this.change_action(value)
+      // console.log('Value of category changed')
+      // return this.updateAction(value)
+      // return this.$store.commit('updateStatus', {'status': value})
+    },
+    fetchData: function () {
+      return this.$store.dispatch('getServerData')
     }
   },
   beforeCreate () {

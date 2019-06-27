@@ -1,7 +1,7 @@
 export default {
   state: {
     action: 'start',
-    status: 'pending'
+    status: 'not_set'
   },
   getters: {
     getAction: state => state.action,
@@ -22,9 +22,11 @@ export default {
     status_update ({ commit }, response) {
       console.log('into the II store module')
       commit('updateStatus', response)
-    },
+    }
+    /* nnno
     change_action ({ commit }, response) {
       commit('updateAction', response)
     }
+    */
   }
 }

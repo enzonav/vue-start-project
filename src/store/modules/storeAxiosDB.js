@@ -13,7 +13,7 @@ export default {
     getData: state => state.websites,
     returnIndex: state => {
       return state.websites.length
-    }   
+    }
   },
   mutations: {
     SET_TESTS (state, websites) {
@@ -34,6 +34,7 @@ export default {
           // console.log(response.data)
           let websites = response.data
           commit('SET_TESTS', websites)
+          // dispatch('status_update', )
         })
         .catch(error => {
           console.log(error)

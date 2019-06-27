@@ -44,6 +44,7 @@ export default {
   },
   computed: {
     ...mapGetters(['getData', 'getStatus']),
+    ...mapActions(['getServerData']),
     fetchData: function () {
       return this.$store.dispatch('getServerData')
     }

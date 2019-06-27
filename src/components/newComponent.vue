@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     ...mapGetters(['getAction']),
-    ...mapMutations(['updateAction']),
+    // ...mapMutations(['updateAction']),
     action: {
       get () {
         // return this.$store.state.store_test.action

@@ -12,6 +12,10 @@ export default {
       console.log('into the II mutations')
       state.status = response.message
     },
+    setStatus (state, payload) {
+      // console.log('into the II mutations')
+      state.status = payload.value
+    },
     updateAction (state, response) {
       console.log('updateAction')
       state.action = response

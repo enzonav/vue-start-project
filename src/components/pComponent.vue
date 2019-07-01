@@ -2,6 +2,7 @@
 <div>
   <h2>I'm a Page!</h2>
   <h4>action: {{ getAction }}</h4>
+  <h4>status: {{ getStatus }}</h4>
   <h4 v-if="getStatus === 'success'">status: success</h4>
   <h4 v-else-if="getStatus === 'error'">status: error</h4>
   <h4 v-else>status not set</h4>
@@ -83,7 +84,8 @@ export default {
     console.log('mounted')
   },
   beforeUpdate () {
-    console.log('beforeUpdate')
+    console.log('beforeUpdate...mmm qui?')
+    this.setStatus('ahahahhah')
   },
   updated () {
     console.log('updated')

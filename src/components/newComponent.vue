@@ -10,6 +10,7 @@
   </select>
   <!--<p>Selected Action : {{action}}</p>-->
   <p>Selected Action : {{getAction}}</p>
+  <p>My Status Action : {{getStatus}}</p>
 
   Kilometers : <input type = "text" v-model = "kilometers">
   Meters : <input type = "text" v-model = "meters">
@@ -32,12 +33,12 @@ export default {
     console.log('beforeCreate', this)
   },
   computed: {
-    ...mapGetters(['getAction']),
+    ...mapGetters(['getAction', 'getStatus']),
     // ...mapMutations(['updateAction']),
     action: {
       get () {
         // return this.$store.state.store_test.action
-        return this.getAction
+        return this.getAction, this.getStatus
       },
       set (value) {
         // this.change_action(value)

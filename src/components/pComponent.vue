@@ -2,8 +2,8 @@
 <div>
   <h2>I'm a Page!</h2>
   <h4>action: {{ getAction }}</h4>
-  <h4 v-if="getStatus.message === 'success'">myStore: success</h4>
-  <h4 v-else-if="getStatus.message === 'error'">myStore: error</h4>
+  <h4 v-if="getStatus === 'success'">status: success</h4>
+  <h4 v-else-if="getStatus === 'error'">status: error</h4>
   <h4 v-else>status not set</h4>
   <h4>testing map helper getter: {{my_test}} </h4>
   <h4>Array lenght: {{ array_index  }}</h4>
@@ -45,7 +45,8 @@ export default {
         if (this.getStatus === 'not_set') {
           this.fetchData()
           this.changeAction('function called')
-          // this.updateStatus('success')
+          this.setStatus('success')
+          // this.getAction()
           // here dispach action loadTest
         }
       }
@@ -59,11 +60,11 @@ export default {
       // return this.updateAction(value)
       return this.$store.commit('updateAction', value)
     },
-    updateStatus (value) {
+    setStatus (value) {
       // this.change_action(value)
       // console.log('Value of category changed')
       // return this.updateAction(value)
-      // return this.$store.commit('updateStatus', {'status': value})
+      return this.$store.commit('setStatus', { value })
     },
     fetchData: function () {
       return this.$store.dispatch('getServerData')

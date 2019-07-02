@@ -82,10 +82,11 @@ export default {
   },
   mounted () {
     console.log('mounted')
+    this.setStatus('prrrrr')
   },
   beforeUpdate () {
     console.log('beforeUpdate...mmm qui?')
-    this.setStatus('ahahahhah')
+    // this.setStatus('ahahahhah')
   },
   updated () {
     console.log('updated')

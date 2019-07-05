@@ -7,6 +7,8 @@
     <p>Url input: {{ my_data.title }}</p>
     <input placeholder="url" v-model="my_data.url">
     <button @click="addItem(my_data.title, my_data.url)">Add site</button>
+    <button @click="test('test')">test</button>
+    
     <p>Websites Title</p>
     <table border=1>
       <thead>
@@ -47,6 +49,7 @@ export default {
     ...mapActions(['getServerData']),
     fetchData: function () {
       return this.$store.dispatch('getServerData')
+      // return this.geServerData()
     }
     /*
     ...mapState({
@@ -63,8 +66,9 @@ export default {
         'title': title,
         'url': url
       })
+      //this.$store.dispatch('getServerData')
     }
-  }
+  }  
 }
 </script>
 

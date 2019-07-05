@@ -3,6 +3,7 @@
   <h2>I'm a Page!</h2>
   <h4>action: {{ getAction }}</h4>
   <h4>status: {{ getStatus }}</h4>
+  <h4 v-if="array_index > 1">array index > 1</h4>
   <h4 v-if="getStatus === 'success'">status: success</h4>
   <h4 v-else-if="getStatus === 'error'">status: error</h4>
   <h4 v-else>status not set</h4>

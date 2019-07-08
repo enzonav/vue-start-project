@@ -49,6 +49,7 @@ export default {
             'message': response.data.message
           }
           dispatch('status_update', { message })
+          dispatch('getServerData')
         })
         .catch(error => {
           console.log(error)

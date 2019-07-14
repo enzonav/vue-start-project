@@ -6,7 +6,8 @@ import { routes } from './router/index.js'
 import store from './store/index.js'
 
 Vue.config.productionTip = false
-Vue.use(Vuetify, VueRouter)
+Vue.use(VueRouter)
+Vue.use(Vuetify)
 
 /* creating an event bus with no rendere vue instance */
 export const eventBus = new Vue()
